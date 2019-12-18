@@ -1,0 +1,42 @@
+<div class="hero">
+  <br/>
+  <br/>
+
+
+<h1>Add a Book</h1>
+
+<%= render 'form', book: @book %>
+
+<%= link_to 'Back', books_path %>
+
+</div>
+
+<input id="search" type="text" name="" value="">
+<button id="search-btn" type="button"name="button">Search for a Book</button>
+<div class="results">
+
+</div>
+
+<script type="text/javascript">
+  $('#search-btn').click(() => {
+    console.log('here')
+    const API_KEY="AIzaSyDiD4-PMlnevbJfei6rSahTEwQmDN0YqFU"
+    $.get(`https://www.googleapis.com/books/v1/volumes?q=warandpeace&key=${API_KEY}`).then((data) => {
+      console.log(data)
+      for(i=0; i<data.items.length; i++){
+        const curItem = data.items[i];
+
+        const title = curItem.volumeInfo.title;
+
+        const div = $('div');
+        div.text(title)
+
+        $('.results').append(div)
+
+        //get title , author and image and store in variables
+        //create elements using jquery to hold these values
+        //append these values to the DOM
+      }
+    })
+  })
+</script>
