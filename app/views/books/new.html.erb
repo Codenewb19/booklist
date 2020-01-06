@@ -28,10 +28,10 @@
 
         const title = curItem.volumeInfo.title;
 
-        const div = $('div');
-        div.text(title)
+        const div = $('.results');
 
-        $('.results').append(div)
+        div.append(`<p>${title}</p>`)
+        //$('.results').append(div)
 
         //get title , author and image and store in variables
         //create elements using jquery to hold these values
