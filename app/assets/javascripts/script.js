@@ -17,10 +17,10 @@ $( "#searchForm" ).submit(function( event ) {
 	_searchText = $("#searchForm input:text").val(); //get the text value to be used as a search paramenter
 	switch ($("#typeSearch").val()){
 		case "Author":
-    	_searchType = "+inauthor";
+			_searchType = "+inauthor:";
 			break;
 		case "Title":
-			_searchType = "+intitle";
+			_searchType = "+intitle:";
 			break;
 		case "-":
 			_searchType ="";
