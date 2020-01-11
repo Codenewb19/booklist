@@ -4,7 +4,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 900px;
+  height: 700px;
 }
 
 .hero2 {
@@ -45,9 +45,11 @@ pre {
 
 a {
   color: #000;
+  font-size: 20px;
 
   &:visited {
     color: #666;
+    font-size: 20px;
   }
 
   &:hover {
