@@ -5,7 +5,7 @@ before_action :authenticate_user!, only: [:new, :create]
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = Book.where(user_id: current_user.id)
   end
 
   # GET /books/1
@@ -25,7 +25,7 @@ before_action :authenticate_user!, only: [:new, :create]
   # POST /books
   # POST /books.json
   def create
-    @book = Book.new(book_params)
+    @book = Book.new(book_params.merge(user_id: current_user.id))
 
     respond_to do |format|
       if @book.save
